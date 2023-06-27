@@ -9,8 +9,8 @@ module.exports = {
 	entry: path.resolve(__dirname, './src/index.js'),
 	target: "web",
 	externals: {
-		'react': 'react',
-		'react-dom': 'reactDOM'
+		'react': 'React',
+		'react-dom': 'ReactDOM'
 	},
 	module: {
 		rules: [
