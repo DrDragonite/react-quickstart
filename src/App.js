@@ -1,10 +1,11 @@
 import React from "react";
-import Test from "./test";
 import "./App.css"
+import "./debug.css"
 
-function App() {
-	return (
-	);
+class App extends React.Component {
+	render() {
+		return;
+	}
 }
 
 export default App;
