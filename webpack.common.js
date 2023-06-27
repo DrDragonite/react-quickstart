@@ -36,7 +36,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: "logoped",
+			title: "react app",
 			filename: "index.html",
 			favicon: "",
 			minify: isProdMode,
