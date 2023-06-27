@@ -1,9 +1,10 @@
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 const webpack = require('webpack');
 
-const isProdMode = process.env.NODE_ENV != "development";
+const isDevelopment = process.env.NODE_ENV == "development";
 
 module.exports = {
 	entry: path.resolve(__dirname, './src/index.js'),
@@ -36,13 +37,14 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: "react app",
+			title: "logoped",
 			filename: "index.html",
 			favicon: "",
-			minify: isProdMode,
+			minify: !isDevelopment,
 			template: "static/index.html"
 		}),
-		!isProdMode && new webpack.HotModuleReplacementPlugin(),
+		isDevelopment && new webpack.HotModuleReplacementPlugin(),
+		isDevelopment && new ReactRefreshWebpackPlugin(),
 		new MiniCssExtractPlugin()
 	].filter(Boolean),
 };
